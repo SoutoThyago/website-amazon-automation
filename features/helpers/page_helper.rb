@@ -4,6 +4,7 @@ module PageObjects
 
   require_relative '../../lib/pages/cadastro/login'
   require_relative '../../lib/pages/cadastro/profile'
+  require_relative '../../lib/pages/cadastro/products'
 
   def amazonLoginPage
     @amazonLoginPage ||= AmazonLoginPage.new
@@ -11,6 +12,10 @@ module PageObjects
 
   def amazonProfilePage
     @amazonProfilePage ||= AmazonProfilePage.new
+  end
+
+  def amazonProductsPage
+    @amazonProductsPage ||= AmazonProductsPage.new
   end
 
 end
