@@ -19,6 +19,15 @@ E('filtro os preços entre {string} e {string} reais') do |initialValue,finalVal
     amazonProductsPage.sendValuesPrice initialValue, finalValue
 end
 
+E('ordeno pelos lançamentos') do
+    amazonProductsPage.clickButtonOrderTo
+    amazonProductsPage.clickButtonFieldReleases
+end
+
+E('seleciono apenas produtos quatro estrelas ou mais') do
+    amazonProductsPage.clickButtonFourStars
+end
+
 Entao('sou direcionado para as ofertas do dia') do 
     expect(amazonProductsPage.dayOffersVisible).to eq true
 end

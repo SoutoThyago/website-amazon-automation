@@ -34,3 +34,15 @@ Funcionalidade: Produtos
       E realizo a busca do produto 'mesa'
       E filtro os preços entre '1' e '1000' reais
       Entao é realizada a listagem dos produtos
+
+    Cenario: [Produtos] - Busca de item "Ordenar por Lançamentos"
+      Quando eu estiver logado com o email 'teste.automacao.2022@gmail.com' e senha 'teste2022'
+      E realizo a busca do produto 'teclado'
+      E ordeno pelos lançamentos
+      Entao é realizada a listagem dos produtos
+
+    Cenario: [Produtos] - Busca de item "Avaliação quatro estrelas ou mais"
+      Quando eu estiver logado com o email 'teste.automacao.2022@gmail.com' e senha 'teste2022'
+      E realizo a busca do produto 'mouse'
+      E seleciono apenas produtos quatro estrelas ou mais
+      Entao é realizada a listagem dos produtos      

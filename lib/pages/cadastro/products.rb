@@ -13,6 +13,9 @@ class AmazonProductsPage < PageBase
     element :fieldLowPrice,                '#low-price'
     element :fieldHighPrice,               '#high-price'
     element :buttonGoFindPrice,            '#a-autoid-1'
+    element :buttonOrderTo,        :xpath, '//span[contains(text(), "Ordenar por")]'
+    element :fieldReleases,                '#s-result-sort-select_4'
+    element :buttonFourStars,      :xpath, '(//span[@class="a-size-small a-color-base"])[4]'
 
     def clickButtonDayOffers
         esperar_elemento_parar :buttonDayOffers, intervalo: 3
@@ -47,6 +50,21 @@ class AmazonProductsPage < PageBase
         send_keys :fieldHighPrice, finalValue
         scroll_to :buttonGoFindPrice    
         click :buttonGoFindPrice
+    end
+
+    def clickButtonOrderTo
+        wait_until_buttonOrderTo_visible wait: 5
+        click :buttonOrderTo
+    end
+
+    def clickButtonFieldReleases
+        wait_until_fieldReleases_visible wait: 5
+        click :fieldReleases
+    end
+
+    def clickButtonFourStars
+        wait_until_buttonFourStars_visible wait: 5
+        click :buttonFourStars
     end
 
     def dayOffersVisible
