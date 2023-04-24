@@ -34,7 +34,7 @@ class AmazonLoginPage < PageBase
 
     def clickButtonDoLogin
         wait_until_buttonDoLogin_visible wait: 5
-        click :buttonDoLogin        
+        click :buttonDoLogin
     end 
 
     def fieldUserNameVisible        

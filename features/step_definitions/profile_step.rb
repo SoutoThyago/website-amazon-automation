@@ -13,6 +13,19 @@ E('atualizo o endereço com nome {string} telefone {string} CEP {string} rua {st
     amazonProfilePage.clickSaveAddress
 end
 
+E('atualizo o cartao de credito com nome {string}') do |cardName|
+    amazonProfilePage.clickYourAccount
+    amazonProfilePage.clickButtonPayments
+    amazonProfilePage.clickFieldFirstCreditCard
+    amazonProfilePage.clickButtonAlterCreditCard
+    amazonProfilePage.sendCardName cardName
+    amazonProfilePage.clickSaveCreditCard
+end
+
 Entao('uma mensagem de endereço atualizado é exibida') do
     expect(amazonProfilePage.buttonAlterAddressVisible).to eq true
+end
+
+Entao ('uma mensagem de forma de pagamento atualizada é exibida') do
+    expect(amazonProfilePage.buttonAlterCreditCardVisible).to eq true
 end
